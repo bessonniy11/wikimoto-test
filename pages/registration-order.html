@@ -1018,39 +1018,39 @@
 							<div class="form-order__delivery delivery-form radiobuttons">
 								<div class="delivery-form__title">Способ доставки</div>
 								<div class="radiobuttons radiobuttons-delivery">
-									<div class="delivery-form__item item-inp radiobuttons__item delivery_for_client">
-										<div class="item-inp__name">
+									<div class="delivery-form__item item-inp radiobuttons__item delivery_for_client delivery_sdek">
+										<label class="item-inp__name">
 											От WikiMoto до пункта выдачи СДЭК 990 ₽
 											<input type="radio" value="1" checked name="nameradio">
-										</div>
+										</label>
 									</div>
-									<div class="delivery-form__item item-inp radiobuttons__item delivery_for_client">
-										<div class="item-inp__name">
+									<div class="delivery-form__item item-inp radiobuttons__item delivery_for_client delivery_ems">
+										<label class="item-inp__name">
 											EMS Russian Post 990 ₽
 											<input type="radio" value="1" name="nameradio">
-										</div>
+										</label>
 									</div>
 									<div class="delivery-form__item item-inp radiobuttons__item self-delivery">
-										<div class="item-inp__name">
+										<label class="item-inp__name">
 											Самовывоз: г. Москва, 3-й Силикатный
 											проезд, д. 4, корп.
 											1, стр. 4
 											<input type="radio" value="1" name="nameradio">
-										</div>
+										</label>
 									</div>
 									<div class="delivery-form__item item-inp radiobuttons__item self-delivery">
-										<div class="item-inp__name">
+										<label class="item-inp__name">
 											Самовывоз: г. Санкт-Петербург,
 											Инструментальная ул. д. 3
 											лит. В
 											<input type="radio" value="1" name="nameradio">
-										</div>
+										</label>
 									</div>
 								</div>
-								<div class="form-order__adress adress-form">
+								<div class="form-order__adress adress-form active">
 									<div class="adress-form__wrapper">
 										<div class="user-form__item user-form__item-index">
-											<input type="number" name="" class="user-form__input adress-form__input adress-form__input-index" onkeyup="validRegistrationOrder()">
+											<input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "6" name="" class="user-form__input adress-form__input adress-form__input-index" onkeyup="validRegistrationOrder()">
 											<label class="user-form__label">Индекс</label>
 											<div class="alert-validation">неверный индекс</div>
 										</div>
@@ -1070,7 +1070,7 @@
 									<div class="pay-form__title">Способ оплаты</div>
 									<div class="radiobuttons2">
 										<div class="pay-form__item-wrap">
-											<div class="pay-form__item pay-inp radiobuttons__item2">
+											<div class="pay-form__item pay-inp radiobuttons__item2 cart-pay">
 												<div class="pay-item__wrapper">
 													<input name="pay" checked class="pay-inp__input" type="radio">
 													Банковской картой: Visa, MasterCard, МИР
@@ -1078,7 +1078,7 @@
 											</div>
 										</div>
 										<div class="pay-form__item-wrap">
-											<div class="pay-form__item pay-inp radiobuttons__item2">
+											<div class="pay-form__item pay-inp radiobuttons__item2 transfer-pay">
 												<div class="pay-item__wrapper">
 													<input name="pay" class="pay-inp__input radiobuttons__item2" type="radio">
 													Оплата переводом
@@ -1096,8 +1096,8 @@
 											</div>
 										</div>
 										<div class="pay-form__item-wrap">
-											<div class="pay-form__item pay-in-office pay-form__item-hidden pay-inp radiobuttons__item2">
-												<div class="pay-item__wrapper pay-item__wrapper-hidden">
+											<div class="pay-form__item pay-in-office pay-form__item-hidden pay-inp radiobuttons__item2 cash-pay">
+												<div class="pay-item__wrapper">
 													<input name="pay" class="pay-inp__input" type="radio">
 													Оплата наличными при получении в
 													офисе
@@ -1153,14 +1153,17 @@
 								</div>
 								<div class="result-order__delivery order-delivery">
 									<div class="order-delivery__name">Доставка:</div>
-									<div class="order-delivery__type">Самовывоз</div>
+									<div class="order-delivery__types-wrap">
+										<div class="order-delivery__type">От WikiMoto до пункта выдачи СДЭК</div>
+										<div class="order-delivery__sum">990 ₽</div>
+									</div>
 								</div>
-								<div class="result-order__adress order-adress">
+								<!-- <div class="result-order__adress order-adress">
 									<div class="order-adress__name">Адрес:</div>
 									<div class="order-adress__desc">г. Санкт-Петербург,<br> Инструментальная ул. д. 3
 										лит. В
 									</div>
-								</div>
+								</div> -->
 								<!-- <div class="result-order__adress order-adress">
 									<div class="order-adress__name">Адрес:</div>
 									<div class="order-adress__desc">г. Санкт-Петербург,<br> Инструментальная ул. д. 3
